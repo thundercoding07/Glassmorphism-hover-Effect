@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li><a href=""><ion-icon name="home-outline"></ion-icon></a></li>
+        <li><a href=""><ion-icon name="person-outline"></ion-icon></a></li>
+        <li><a href=""><ion-icon name="add-circle-outline"></ion-icon></a></li>
+        <li><a href=""><ion-icon name="settings-outline"></ion-icon></a></li>
+        <li><a href=""><ion-icon name="chatbubble-outline"></ion-icon></a></li>
+        <div id="marker"></div>
+    </ul>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<script>
+    let marker = document.querySelector('#marker');
+    let list = document.querySelectorAll('ul li');
+
+    function moveIndicator(e){
+        marker.style.left = e.offsetLeft+'px';
+        marker.style.width = e.offsetWidth+'px';
+    }
+
+    list.forEach(Link => {
+        Link.addEventListener('mousemove', (e) => {
+            moveIndicator(e.target);
+        })
+    })
+
+    function activelink(){
+        list.forEach((item) =>
+            item.classList.remove('active'));
+            this.classList.add('active');
+        }
+
+        list.forEach((item) =>
+        item.addEventListener('mouseover', activelink));
+
+
+</script>
+</body>
+</html>
